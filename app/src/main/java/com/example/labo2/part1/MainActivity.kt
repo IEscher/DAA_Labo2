@@ -1,5 +1,6 @@
 package com.example.labo2.part1
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,10 +22,17 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    @Deprecated("Deprecated in Java")
+    @SuppressLint("SetTextI18n")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == ASK_FOR_NAME_ID && resultCode == RESULT_OK) {
             val name = data?.getStringExtra(ASK_FOR_NAME_KEY)
-            findViewById<TextView>(R.id.welcomeText).text = "Welcome $name"
+
+            val welcomeTextBegin = getString(R.string.welcome_name_begin)
+
+            val welcomeTextEnd = getString(R.string.welcome_name_end)
+
+            findViewById<TextView>(R.id.welcomeText).text = "$welcomeTextBegin $name $welcomeTextEnd"
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }

@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">labo2</string>
     <string name="welcome">Bienvenue, veuillez entrer votre nom</string>
+    <string name="welcome_name_begin">Bienvenue</string>
+    <string name="welcome_name_end">!</string>
     <string name="edit">EDITER</string>
     <string name="save">SAUVER</string>
     <string name="name">name</string>
