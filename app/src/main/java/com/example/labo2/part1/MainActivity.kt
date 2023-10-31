@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val edit = findViewById<TextView>(R.id.editButton)
+
         edit.setOnClickListener {
             val i = Intent(this, Activity2::class.java)
             if (NAME != "")
@@ -21,11 +22,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     @Deprecated("Deprecated in Java")
     @SuppressLint("SetTextI18n")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == ASK_FOR_NAME_ID && resultCode == RESULT_OK) {
+
             val name = data?.getStringExtra(ASK_FOR_NAME_KEY)
 
             val welcomeTextBegin = getString(R.string.welcome_name_begin)
@@ -36,6 +37,19 @@ class MainActivity : AppCompatActivity() {
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
+    }
+
+
+    // sauvegarde de l'activité en cas de rotation
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(NAME, findViewById<TextView>(R.id.welcomeText).text.toString())
+    }
+
+    // restauration de l'activité en cas de rotation
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        findViewById<TextView>(R.id.welcomeText).text = savedInstanceState.getString(NAME)
     }
 
     companion object {
