@@ -67,7 +67,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".part3.ColorFragment"
+            android:name=".part2.ColorFragment"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

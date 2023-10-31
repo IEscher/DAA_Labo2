@@ -1,4 +1,4 @@
-package com.example.labo2.part3
+package com.example.labo2.part2
 
 import android.graphics.Color
 import android.os.Bundle
