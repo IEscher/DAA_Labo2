@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/select"
-        class="com.example.labo2.part3.CounterFragment"
+        class="com.example.labo2.part2.CounterFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1" />

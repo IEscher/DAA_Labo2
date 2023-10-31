@@ -74,7 +74,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".part3.CounterFragment"
+            android:name=".part2.CounterFragment"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
